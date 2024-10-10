@@ -1,0 +1,81 @@
+<project name="banking" default="build">
+
+    
+<!-- Welcome message -->
+    
+<target name="welcome">
+        
+<echo message="Welcome to Banking Services" />
+    
+</target>
+
+    <!-- Savings section -->
+    
+<target name="savings">
+        
+<echo message="Welcome to Savings Section" />
+    
+</target>
+
+    
+<!-- Loans section -->
+    
+<target name="loans">
+        
+<echo message="Welcome to Loans Section" />
+    
+</target>
+
+    
+<!-- Credit card section -->
+    
+<target name="creditcard">
+        
+<echo message="Welcome to Credit Card Section" />
+    
+</target>
+
+    
+<!-- Clean target to clean up previous build files -->
+    
+<target name="clean">
+        
+<echo message="Cleaning up previous build artifacts..." />
+        
+<delete dir="build" />
+    
+</target>
+
+    
+<!-- Compile target to compile the code -->
+    
+<target name="compile" depends="clean">
+        
+<mkdir dir="build/classes" />
+        
+<javac srcdir="src" destdir="build/classes" />
+        
+<echo message="Compilation completed successfully." />
+    
+</target>
+
+    
+<!-- Build target to include welcome and compile steps -->
+    
+<target name="build" depends="welcome, compile">
+        
+<echo message="Build process completed." />
+    
+</target>
+
+    
+<!-- End message target -->
+    
+<target name="end" depends="build">
+        
+<echo message="End of the build process." />
+    
+</target>
+
+
+</project>
